@@ -1,8 +1,9 @@
 const fs = require('fs');
 const path = require('path/posix');
+const encoding = 'utf8'
 
 function crearArchivo(nombre, contenido) {
-    fs.writeFile(nombre, contenido, 'utf8', (error) => {
+    fs.writeFile(nombre, contenido, encoding, (error) => {
         if (error) { // {error: 'Todo salio mal'} | false | undefined
             console.error(error)
         } else {
@@ -20,14 +21,14 @@ function borrar(nombre, err) {
 }
 
 function editar(archivo, contenido, err) {
-    fs.appendFile(archivo, contenido, 'utf8', function (err) {
+    fs.appendFile(archivo, contenido, encoding, function (err) {
         if (err) throw err;
         console.log('Guardado.');
     } )
 }
 
 function leer(path) {
-    fs.readFile(path, 'utf8', (err, data) => {
+    fs.readFile(path, encoding, (err, data) => { // el encoding es necesario para que la computadora interprete  y nos muestre los datos del archivo como queremos leerlos
         if (err) throw err;
         console.log(data);
       });
