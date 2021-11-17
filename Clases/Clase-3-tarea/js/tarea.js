@@ -12,33 +12,33 @@ function crearArchivo(nombre, contenido) {
     });
 }
 
-function borrar(nombre, err) {
-    fs.unlink(nombre, function (err) {
-        if (err) throw err;
-        console.log('File deleted!');
-      }); 
+// function borrar(nombre, err) {
+//     fs.unlink(nombre, function (err) {
+//         if (err) throw err;
+//         console.log('File deleted!');
+//       }); 
 
-}
+// }
 
-function editar(archivo, contenido, err) {
-    fs.appendFile(archivo, contenido, encoding, function (err) {
-        if (err) throw err;
-        console.log('Guardado.');
-    } )
-}
+// function editar(archivo, contenido, err) {
+//     fs.appendFile(archivo, contenido, encoding, function (err) {
+//         if (err) throw err;
+//         console.log('Guardado.');
+//     } )
+// }
 
-function leer(path) {
-    fs.readFile(path, encoding, (err, data) => { // el encoding es necesario para que la computadora interprete  y nos muestre los datos del archivo como queremos leerlos
-        if (err) throw err;
-        console.log(data);
-      });
-}
+// function leer(path) {
+//     fs.readFile(path, encoding, (err, data) => { // el encoding es necesario para que la computadora interprete  y nos muestre los datos del archivo como queremos leerlos
+//         if (err) throw err;
+//         console.log(data);
+//       });
+// }
 
 
-// crearArchivo('ejercicio.txt', 'Este será su ejercicio de mañana')
+ crearArchivo('promises.js', '// Clase de Promisses')
 
 // editar("nuevoEjercicio.txt", "Nuevo ejercicio de hoy")
 
 // borrar("ejercicio.txt")
 
- leer("nuevoEjercicio.txt")
+// leer("nuevoEjercicio.txt")
