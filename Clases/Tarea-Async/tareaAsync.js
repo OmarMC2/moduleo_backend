@@ -1,6 +1,6 @@
 const fs = require('fs/promises');
 const encoding = 'utf8'
-
+/*
 async function crearArchivo(nombre, contenido) {
     try {
         await fs.writeFile(nombre, contenido, encoding);
@@ -53,3 +53,44 @@ async function ejecutoraDeCRUD() {
     await borrar('archivoPrueba.txt')
 }
 ejecutoraDeCRUD()
+*/
+async function crearCarpeta(nombre, contenido) {
+    try {
+        await fs.mkdir(nombre, contenido,);
+        console.log('carpeta creada')
+    } catch (error) {
+        console.error();
+    }
+  
+}
+
+async function eliminarCarpeta(nombre, contenido) {
+    try {
+        await fs.rmdir(nombre, contenido,);
+        console.log('carpeta eliminada')
+    } catch (error) {
+        console.error();
+    }
+  
+}
+
+
+async function leerCarpeta(nombre, contenido) {
+    try {
+      let result = await fs.readdir(nombre, contenido,);
+        console.log('carpeta leida')
+        console.log(result)
+    } catch (error) {
+        console.error();
+    }
+  
+}
+
+async function ejecutorCarpetas(){
+   await crearCarpeta('nueva carpeta')
+   await leerCarpeta('nueva carpeta')
+   await eliminarCarpeta('nueva carpeta')
+
+}
+
+ejecutorCarpetas()
